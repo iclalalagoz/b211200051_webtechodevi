@@ -2,8 +2,10 @@
 <html lang="tr">
 <head>
 <title> iclal alagöz - b211200051 -  web teknolojileri ödevi</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="style.css" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="lib/jquery-2.0.3.js"></script>
@@ -14,12 +16,231 @@
     $(".swipebox").swipebox();
   });
   </script>
-<style>
-body{
-  background-color:rgba(170, 130, 233, 0.808);
+<style>@import url("https://fonts.googleapis.com/css2?family=Domine&display=swap");
+
+:root {
+  --color-primary: #de6262;
+  --color-secondary: #ffb88c;
+  --color-light: #f0d8d8;
 }
-@import url("https://fonts.googleapis.com/css2?Family=Domine&display=swap");
-:root{
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Domine", serif;
+}
+
+body {
+  height: 100vh;
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items:center;*/
+  background-color : rgba(170, 130, 233, 0.808);
+}
+
+.container {
+  width: 80%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: 1fr ;
+  gap: 20px; /*ne işe yaradı anlamadım*/
+  position: relative;
+}
+
+.col-images {
+  height: 100%;
+  padding: 20px;
+  align-self: center;/*ne değişti anlamadım*/
+  border-radius: 30px 30px 30px 30px;
+  box-shadow:0 6px 25px rgba(255, 255, 255, 0.8);
+  display: grid;
+  grid-template-areas:
+    "img-1 img-5 img-3"
+    "img-7 img-9 img-10"
+    "img-11 img-12 img-14"
+    "img-15 img-16 img-18"
+    "img-19 img-20 img-21";
+  gap: 20px;
+}
+
+.col-images .image-container {
+  height: 0;
+  min-height: 100%;
+  /* width: 0;
+  min-width: 100%;*/
+  border-radius: 18px;
+  background-repeat: no-repeat;/*ne işe yaradı anlamadım*/
+  background-size: cover;/*ne işe yaradı anlamadım*/
+  background-position: center;/*ne işe yaradı anlamadım*/
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.col-images .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  transition: transform 0.4s;
+}
+
+.col-images .image-1 {
+  grid-area: img-1;
+}
+
+.col-images .image-3 {
+  grid-area: img-3;
+}
+
+.col-images .image-5 {
+  grid-area: img-5;
+}
+
+.col-images .image-7 {
+  grid-area: img-7;
+}
+.col-images .image-9 {
+  grid-area: img-9;
+}
+.col-images .image-10 {
+  grid-area: img-10;
+}
+.col-images .image-11{
+  grid-area: img-11;
+}
+.col-images .image-12 {
+  grid-area: img-12;
+}
+.col-images .image-14 {
+  grid-area: img-14;
+}
+.col-images .image-15{
+  grid-area: img-15;
+}
+.col-images .image-16{
+  grid-area: img-16;
+}
+.col-images .image-18 {
+  grid-area: img-18;
+}
+.col-images .image-19 {
+  grid-area: img-19;
+}
+.col-images .image-20 {
+  grid-area: img-20;
+}
+.col-images .image-21 {
+  grid-area: img-21;
+}
+
+.col-images .image-container:hover img {
+  transform: scale(1.2);
+}
+
+.image-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+
+.image-modal.toggled {
+  opacity: 1;
+  visibility: visible;
+}
+
+.image-modal.toggled img {
+  transform: scale(1);
+}
+
+.image-modal .fullscreen-image-container {
+  height: 90%;
+  border-radius: 20px;
+}
+
+.image-modal img {
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+  transform: scale(0.9);
+  transition: transform 0.3s 0.1s;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+    grid-template-columns: 2fr 3fr;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: 90%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 6fr;
+    gap: 10px;
+  }
+
+  .container::before,
+  .container::after {
+    top: -20px;
+    width: 60px;
+  }
+
+  .container::after {
+    right: -20px;
+    left: unset;
+    border: 3px solid var(--color-secondary);
+    border-left: none;
+    border-bottom: none;
+  }
+
+
+  .image-modal .fullscreen-image-container {
+    width: 50%;
+    height: auto;
+  }
+
+  .image-modal img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    width: 100%;
+  }
+
+  .container::before {
+    left: 6px;
+  }
+
+  .container::after {
+    right: 6px;
+  }
+
+  .col-images {
+    border-radius: 0;
+  }
+
+  .image-modal .fullscreen-image-container {
+    width: 96%;
+  }
 }
 </style>
 </head>
@@ -44,29 +265,70 @@ body{
             </li>
           </ul>
     </div>
-    </nav> 
+    </nav>
+    <div class="image-modal">
+      <div class="fullscreen-image-container">
+        <img src="img/img-1.jpg" alt="Fullscreen Image" />
+      </div>
+    </div> 
 
   <div class="container-fluid mt-3">
     <h1 style="color: #46052d;">Benim ve arkadaşlarımın gözünden İstanbul </h1>
   </div>
   <div class="container">
   <div class="col-images">
-    <div class="image-container" ><img src="ist.1.jpeg" alt="image"></div>
-    <div class="image-container"><img src="ist.3.jpeg" alt="image"></div>
-    <div class="image-container"><img src="ist.5.jpeg" alt="image"></div>
-    <div class="image-container"<img src="ist.7.jpeg" alt="image"></div>
-    <div class="image-container"<img src="ist.9.jpeg" alt="image"></div>
-    <div class="image-container"<img src="ist.10.jpeg" alt="image"></div>
-    <div class="image-container"<img src="ist.11.jpeg" alt="image"></div>
-    <div class="image-container"<img src="ist.12.jpeg" alt="image"></div>
-    <div class="image-container"<img src="ist.14.jpeg" alt="image"></div>
-    <div class="image-container"<img src="ist.15.jpeg" alt="image"></div>
-    <div class="image-container"<img src="ist.16.jpeg" alt="image"></div>
-    <div class="image-container"<img src="ist.18.jpeg" alt="image"></div>
-    <div class="image-container"<img src="ist.19.jpeg" alt="image"></div>
-    <div class="image-container"<img src="ist.20.jpeg" alt="image"></div>
-    <div class="image-container"<img src="ist.21.jpeg" alt="image"></div>
+    <div class="image-container image-1"><img src="ist.1.jpeg" alt="image"></div>
+    <div class="image-container image-3"><img src="ist.3.jpeg" alt="image"></div>
+    <div class="image-container image-5"><img src="ist.5.jpeg" alt="image"></div>
+    <div class="image-container image-7"><img src="ist.7.jpeg" alt="image"></div>
+    <div class="image-container image-9"><img src="ist.9.jpeg" alt="image"></div>
+    <div class="image-container image-10"><img src="ist.10.jpeg" alt="image"></div>
+    <div class="image-container image-11"><img src="ist.11.jpeg" alt="image"></div>
+    <div class="image-container image-12"><img src="ist.12.jpeg" alt="image"></div>
+    <div class="image-container image-14"><img src="ist.14.jpeg" alt="image"></div>
+    <div class="image-container image-15"><img src="ist.15.jpeg" alt="image"></div>
+    <div class="image-container image-16"><img src="ist.16.jpeg" alt="image"></div>
+    <div class="image-container image-18"><img src="ist.18.jpeg" alt="image"></div>
+    <div class="image-container image-19"><img src="ist.19.jpeg" alt="image"></div>
+    <div class="image-container image-20"><img src="ist.20.jpeg" alt="image"></div>
+    <div class="image-container image-21"><img src="ist.21.jpeg" alt="image"></div>
   </div>
 </div>
+
+<script src="app.js"></script>
+<script>
+  // DOM Elements
+const images = document.querySelectorAll(".image-container img");
+const imageModal = document.querySelector(".image-modal");
+const fullscreenImage = document.querySelector(
+".fullscreen-image-container img"
+);
+
+let imgSrc = "";
+
+// Click to display images on the modal
+function displayImage(image) {
+// Get img src
+imgSrc = image.getAttribute("src");
+
+// Set fullscreen image src
+fullscreenImage.setAttribute("src", imgSrc);
+
+// Toggle modal
+imageModal.classList.add("toggled");
+}
+
+// Event Listeners
+images.forEach((image) =>
+image.addEventListener("click", (e) => displayImage(e.target))
+);
+
+// To close the modal
+imageModal.addEventListener("click", (e) => {
+if (e.target.classList.contains("image-modal")) {
+imageModal.classList.remove("toggled");
+}
+});
+</script>
 </body>
 </html>

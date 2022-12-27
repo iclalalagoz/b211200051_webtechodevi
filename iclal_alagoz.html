@@ -10,6 +10,30 @@
 body{
   background-color:rgba(170, 130, 233, 0.808);
 }
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+  padding: 5px;
+  color:rgb(248, 212, 224);
+  content: ">\00a0";
+  font-weight: 800;
+  font-family:'Courier New', Courier, monospace;
+}
+ul.breadcrumb li a {
+  color: #ffd4f6;
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ul.breadcrumb li a:hover {
+  color: rgba(81, 45, 110, 0.938);
+  text-decoration: underline;
+}
 </style>
 </head>
 <body>
@@ -26,15 +50,22 @@ body{
               <a class="nav-link " href="#ilçeleri">İlçeleri </a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link " href="#">harita</a>
+              <a class="nav-link " href="#">Kafe ve Restoranlar</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link " href="album.html">istanbul'dan bazı kareler</a>
+              <a class="nav-link " href="album.html">İstanbul'dan Bazı Kareler</a>
             </li>
           </ul>
     </div>
     </nav> 
   </nav> 
+  <div style="float: right;">
+    <ul class="breadcrumb">
+      <li style="font-weight: bold; color: #3d1a4d;" ><a href="#" ></a>Hakkında</li>
+      <li><a href="#" >İlçeleri</a></li>
+      <li><a href="#" >Kafe ve Restoranlar</a></li>
+      <li ><a href ="#">İstanbul'dan Bazı Kareler</a></li>
+    </ul></div>
   <div class="container-fluid" >  
     <div class="img-fluid" style="margin: 5px 15px 5px 0px;float: left;">
   <img src="istanbul.jpeg"  alt="istanbul">

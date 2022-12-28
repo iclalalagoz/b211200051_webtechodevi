@@ -36,14 +36,16 @@ input[type=submit]:hover {
 
 .container {
   border-radius: 5px;
-  margin: 10px 50px 10px 50px;
-  }
+  padding: 20px 20px 20px 20x;
+  display: inline-block;
+}
 ul {list-style-type: none;}
-.month {
-  padding: 70px 25px;
-  width: 50%;
-  background: #450652;
-  text-align: center;
+
+    .month {
+  padding: 50px 25px;
+  width: 90%;
+  background: #500c4570;
+  text-align:center;
 }
 
 .month ul {
@@ -59,7 +61,7 @@ ul {list-style-type: none;}
 }
 
 .month .prev {
-  float: left;
+  float:left;
   padding-top: 10px;
 }
 
@@ -72,7 +74,7 @@ ul {list-style-type: none;}
   margin: 0;
   padding: 10px 0;
   background-color: #ddd;
-  width: 50%;
+  width: 90%;
 }
 
 .weekdays li {
@@ -86,8 +88,7 @@ ul {list-style-type: none;}
   padding: 10px 0;
   background: #eee;
   margin: 0;
-  width: 50%;
-
+  width: 90%;
 }
 
 .days li {
@@ -95,9 +96,9 @@ ul {list-style-type: none;}
   display: inline-block;
   width: 13.6%;
   text-align: center;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
   font-size:12px;
-  color: #777;
+  color: rgb(19, 3, 3);
 }
 
 @media screen and (max-width:720px) {
@@ -176,69 +177,70 @@ ul.breadcrumb li a:hover {
 </div>
 <br>
 <br>
-<div class="container-fluid" style="float: left;">
+<div class="container-fluid" style="display:flex;">
+<div class="container-fluid" style="display: inline-block;">
 <div class="month">      
-    <ul>
-      <li class="prev">&#10094;</li>
-      <li class="next">&#10095;</li>
-      <li>
-        O C A K<br>
-        <span style="font-size:20px">2023</span>
-      </li>
-    </ul>
-  </div>
-  <ul class="weekdays">
-    <li>Pt</li>
-    <li>Sa</li>
-    <li>Ça</li>
-    <li>Pe</li>
-    <li>Cu</li>
-    <li>Ct</li>
-    <li>Pa</li>
-  </ul>
-
-  <ul class="days">  
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    <li>6</li>
-    <li>7</li>
-    <li>8</li>
-    <li>9</li>
-    <li>10</li>
-    <li>11</li>
-    <li>12</li>
-    <li>13</li>
-    <li>14</li>
-    <li>15</li>
-    <li>16</li>
-    <li>17</li>
-    <li>18</li>
-    <li>19</li>
-    <li>20</li>
-    <li>21</li>
-    <li>22</li>
-    <li>23</li>
-    <li>24</li>
-    <li>25</li>
-    <li>26</li>
-    <li>27</li>
-    <li>28</li>
-    <li>29</li>
-    <li>30</li>
-    <li>31</li>
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>
+      OCAK<br>
+      <span style="font-size:18px">2023</span>
+    </li>
   </ul>
 </div>
+<ul class="weekdays">
+  <li>Pt</li>
+  <li>Sa</li>
+  <li>Ça</li>
+  <li>Pe</li>
+  <li>Cu</li>
+  <li>Ct</li>
+  <li>Pa</li>
+</ul>
 
-<div class="container" >
+<ul class="days">  
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li>10</li>
+  <li>11</li>
+  <li>12</li>
+  <li>13</li>
+  <li>14</li>
+  <li>15</li>
+  <li>16</li>
+  <li>17</li>
+  <li>18</li>
+  <li>19</li>
+  <li>20</li>
+  <li>21</li>
+  <li>22</li>
+  <li>23</li>
+  <li>24</li>
+  <li>25</li>
+  <li>26</li>
+  <li>27</li>
+  <li>28</li>
+  <li>29</li>
+  <li>30</li>
+  <li>31</li>
+</ul>
+</div>
+
+<div class="container-fluid" style="padding: 20px 30px 20px 0px">
     <form action="/action_page.php">
       <label for="ad">Ad</label>
       <input type="text" id="ad" name="Ad" placeholder="adı...">
@@ -254,5 +256,6 @@ ul.breadcrumb li a:hover {
       <input type="submit" value="Submit">
     </form>
   </div>
+</div>
 </body>
 </html>

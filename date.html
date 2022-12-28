@@ -9,7 +9,7 @@
 <style>
     * {box-sizing:border-box;}
 
-input[type=text], select, textarea {
+input[type=text], datetime-local, select, textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -248,6 +248,9 @@ ul.breadcrumb li a:hover {
       <label for="soyad">Soyad</label>
       <input type="text" id="soyad" name="Soyad" placeholder="soyadı...">
   
+      <label for="date">Buluşma Tarihi</label>
+      <input type="datetime-local" id="date" style="width:100%;border:1px solid #ccc;border-radius: 4px;padding: 12px;"/>
+
       <label for="Yaka">Yaka</label>
       <select id="Yaka" name="Yaka">
         <option value="Anadolu Yakası">Anadolu Yakası</option>
@@ -255,6 +258,7 @@ ul.breadcrumb li a:hover {
       </select>
       <input type="submit" value="Submit">
     </form>
+
   </div>
 </div>
 </body>
